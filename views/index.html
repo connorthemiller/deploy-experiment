@@ -1,0 +1,84 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>my favorite tiktoks</title>
+    <meta name="description" content="A cool thing made with Glitch" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's client-side javascript file -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>
+        {{ message }}
+      </h1>
+      <div id="about">
+        <p>
+          Tik Tok is a fun place, but it can be difficult to find the good
+          stuff. I spend an hour on Tik Tok a couple times throughout the week,
+          and copy my favorites into an
+          <a target="_blank" href="https://airtable.com/shrir17vWiPUOZRz2">Airtable</a>, which
+          then feeds into this site. Since Tik Tok currently doesn't have a way
+          to share user-made playlists, this will serve that purpose in the
+          meantime.
+        </p>
+        <p style="text-align: center">
+          - <a href="https://twitter.com/connorthemiller">@connorthemiller</a>
+        </p>
+      </div>
+      <ul>
+        <!--         <li v-for="tiktok in tiktoks" v-html="tiktok.html"></li> -->
+      </ul>
+      <ul id="gallery">
+        <li v-for="tiktok in tiktoks">
+          <a target="_blank" :href="tiktok.url">
+          <div
+            :style="{ backgroundImage: 'url('+ tiktok.data.thumbnail_url +')'}"
+            class="ratio-4-3"
+          ></div>
+          </a>
+        </li>
+      </ul>
+      <modal v-show="showModal" @close="showModal = false">
+        <h3 slot="header">
+          custom header
+        </h3>
+        <div slot="body">
+         <span v-html="selected.html"></span>
+        </div>
+      </modal>
+    </div>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+  </body>
+</html>
