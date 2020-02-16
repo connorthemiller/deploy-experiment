@@ -1,30 +1,11 @@
-Welcome to Glitch
+Ted Chiang Story Generator
 =================
 
-Click `Show` in the header to see your app live. Updates to your code may take a few seconds to deploy and update.
+[Ted Chiang](https://en.wikipedia.org/wiki/Ted_Chiang) is an award-winning science-fiction author who famously wrote the short story on which the movie "Arrival" (starring Amy Adams) was based.
 
-Click `Tools -> Logs` in the bottom left to see your app build in real time. This is also where you can find errors when they occur.
+He writes pieces that mix tender humanity with hot tech topics, and this app gives you the general idea of his style.
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-
-Your Project
-------------
-
-On the front-end,
-- edit `js/site.js`, `_sass/content.scss` and `pages/index.md`
-- drag in `assets`, like images or music, to add them to your project
-
-On the back-end,
-- store site-wide variables in `_config.yml` 
-- add frameworks and packages in `Gemfile`
-
-
-Made by [@pixely](https://glitch.com/@pixely)
+Made with [Glitch](https://glitch.com/)
 -------------------
-
-Loosely based on [hello-express](https://glitch.com/~hello-express)
 
 \ ゜o゜)ノ
